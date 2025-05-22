@@ -110,7 +110,8 @@ def load_price_data(symbol: str, start: str = "2015-01-01", end: str = None) -> 
     else:
         hist = ticker.history(start=start, end=end)
     hist.reset_index(inplace=True)
-    hist["Date"] = pd.to_datetime(hist["Date"])
+    # Convert to datetime and remove timezone (if any)
+    hist["Date"] = pd.to_datetime(hist["Date"]).dt.tz_localize(None)
     hist.set_index("Date", inplace=True)
     return hist
 
