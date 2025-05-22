@@ -90,7 +90,7 @@ run_button = st.sidebar.button("Run Backtest")
 # ---------------------------------------------------
 # 2. Main Area: Title & Description
 # ---------------------------------------------------
-st.title("\ud83d\udcc8 Options Strategy Backtester")
+st.title("Options Strategy Backtester")
 st.write("""
 This app backtests your chosen options strategy over historical data.\nWe simulate theoretical option prices at entry using the Black-Scholes formula\n(either based on 21-day realized volatility or a fixed volatility you enter),\nthen compute the actual payoff at expiry (intrinsic value based on underlying price).\nFinally, we display per-trade P/L, an equity curve, and summary metrics.
 """)
